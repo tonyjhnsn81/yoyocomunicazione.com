@@ -10,97 +10,120 @@
     {}
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        article h1{font-size:2rem;font-weight:800;margin:1.5rem 0 1rem;color:#0f172a}
-        article h2{font-size:1.5rem;font-weight:700;margin:2rem 0 .75rem;color:#0f172a;border-left:4px solid #3b82f6;padding-left:1rem}
-        article h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem;color:#1e293b}
-        article p{margin-bottom:1rem;line-height:1.75;color:#334155}
-        article ul,article ol{padding-left:1.5rem;margin-bottom:1rem}
-        article li{margin-bottom:.5rem;line-height:1.6}
-        article table{width:100%;border-collapse:collapse;margin:1.5rem 0}
-        article th{background:#f1f5f9;font-weight:700;padding:.75rem;border:1px solid #e2e8f0;text-align:left}
-        article td{padding:.75rem;border:1px solid #e2e8f0}
+        .hero-gradient { background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1596838132731-dd9651557c5a?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; }
+        
+        article h1{font-size:2.5rem;font-weight:800;margin:1.5rem 0 1rem;color:#0f172a;line-height:1.2}
+        article h2{font-size:1.75rem;font-weight:700;margin:2.5rem 0 1rem;color:#0f172a;border-left:4px solid #3b82f6;padding-left:1.25rem}
+        article h3{font-size:1.35rem;font-weight:600;margin:1.75rem 0 .75rem;color:#1e293b}
+        article p{margin-bottom:1.25rem;line-height:1.8;color:#334155;font-size:1.05rem}
+        article ul,article ol{padding-left:1.5rem;margin-bottom:1.25rem}
+        article li{margin-bottom:.6rem;line-height:1.7;color:#334155}
+        article table{width:100%;border-collapse:collapse;margin:2rem 0;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden}
+        article th{background:#f1f5f9;font-weight:700;padding:1rem;border:1px solid #e2e8f0;text-align:left;color:#0f172a}
+        article td{padding:1rem;border:1px solid #e2e8f0;color:#475569}
         article a{color:#2563eb;text-decoration:underline}
-        article figure img{border-radius:8px}
-        article figcaption{font-size:.875rem;color:#94a3bb;margin-top:.5rem}
+        article figure img{border-radius:12px;width:100%;height:auto}
+        article figcaption{font-size:.875rem;color:#94a3bb;margin-top:.75rem;text-align:center}
 
-        .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .card-shadow { box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05); }
-        .badge-gradient { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+        .card-shadow { box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08); transition: transform 0.2s ease; }
+        .card-shadow:hover { transform: translateY(-2px); }
+        
         @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
+            from { transform: translateY(100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .animate-fade-in { animation: slideUp 0.5s ease-out forwards; }
+        .animate-slide-up { animation: slideUp 0.5s ease-out; }
     </style>
-    {{{schema_json}}}
 </head>
 <body class="text-slate-900">
 
     <!-- Navigation -->
-    <nav class="glass-header sticky top-0 z-50 border-b border-slate-200">
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <div class="bg-blue-600 p-2 rounded-lg">
-                        <i data-lucide="layers" class="text-white w-6 h-6"></i>
-                    </div>
-                    <span class="text-xl font-black tracking-tight text-slate-900 uppercase">YoYo<span class="text-blue-600">Comunicazione</span></span>
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i data-lucide="zap" class="text-white w-6 h-6"></i>
+                        </div>
+                        <span class="text-xl font-black tracking-tighter text-slate-900 uppercase">YoYo<span class="text-blue-600">Comunicazione</span></span>
+                    </a>
                 </div>
                 
-                <div class="hidden md:flex space-x-8 items-center font-medium text-slate-600">
-                    <a href="#" class="hover:text-blue-600 transition">Home</a>
-                    <a href="#" class="hover:text-blue-600 transition">Recensioni</a>
-                    <a href="#" class="hover:text-blue-600 transition">Guide</a>
-                    <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Migliori Bonus</a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#" class="hover:text-blue-600 transition">Casino senza documenti</a>
+                    <a href="#" class="hover:text-blue-600 transition">Casino non AAMS</a>
+                    <a href="#" class="hover:text-blue-600 transition">Siti scommesse</a>
+                    <a href="/about/" class="hover:text-blue-600 transition">Chi Siamo</a>
+                    <a href="#" class="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-blue-600 transition">Contattaci</a>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600">
-                    <i data-lucide="menu"></i>
-                </button>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
             </div>
         </div>
+
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-4">
-            <a href="#" class="block font-medium text-slate-700">Home</a>
-            <a href="#" class="block font-medium text-slate-700">Recensioni</a>
-            <a href="#" class="block font-medium text-slate-700">Guide</a>
-            <a href="#" class="block font-medium text-blue-600 font-bold">Migliori Bonus</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-xl">
+            <a href="#" class="block text-lg font-medium text-slate-700">Casino senza documenti</a>
+            <a href="#" class="block text-lg font-medium text-slate-700">Casino non AAMS</a>
+            <a href="#" class="block text-lg font-medium text-slate-700">Siti scommesse</a>
+            <a href="/about/" class="block text-lg font-medium text-slate-700">Chi Siamo</a>
+            <a href="#" class="block text-lg font-bold text-blue-600">Contattaci</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-slate-900 text-white py-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&q=80&w=2000" alt="Casino background" class="w-full h-full object-cover">
-        </div>
-        <div class="max-w-5xl mx-auto px-4 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-sm font-bold mb-6 animate-fade-in">
-                <i data-lucide="shield-check" class="w-4 h-4"></i>
-                Aggiornato: Marzo 2026
+    <section class="hero-gradient text-white py-16 md:py-24 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 bg-blue-600/30 border border-blue-400/30 rounded-full px-4 py-1.5 mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-widest">Aggiornato Marzo {{year}}</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight animate-fade-in" style="animation-delay: 0.1s">
-                I Migliori Casino <span class="text-blue-500">Senza Documenti</span> 2026
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 animate-fade-in" style="animation-delay: 0.2s">
-                Confronta i siti di gioco online sicuri che permettono depositi e prelievi istantanei senza l'invio di documenti di identità.
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Casino Senza Documenti: Gioca Subito Senza Invio di Documenti</h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+                Scopri i migliori casino online sicuri che permettono di giocare e prelevare istantaneamente senza dover attendere la verifica del conto.
             </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-medium">
+                <div class="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-lg">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                    <span>No KYC</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-lg">
+                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                    <span>Prelievi Rapidi</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-lg">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-blue-400"></i>
+                    <span>Sicuro al 100%</span>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 pb-20">
-        <!-- Brand List -->
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10">
+        
+        <!-- Brand Cards Placeholder -->
         <div class="space-y-4 mb-16">
             
         </div>
 
-        <!-- Content Area -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-12">
-                <article class="bg-white p-8 md:p-12 rounded-3xl card-shadow">
-                    <h1>Contatti</h1>
+        <!-- Article Content -->
+        <div class="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-slate-100">
+            <article>
+                <h1>Contatti</h1>
 <p>Siamo sempre felici di sentirti. Che tu abbia una domanda, un feedback o una richiesta commerciale, non esitare a contattarci.</p>
 
 <h2>Come Contattarci</h2>
@@ -128,83 +151,92 @@
   <button type="submit" style="padding:.7rem 1.5rem;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer;">Invia Messaggio</button>
   <p style="font-size:.85rem;color:#888;">Nota: Questo modulo è a scopo illustrativo. Contattaci direttamente via email.</p>
 </form>
-                </article>
-            </div>
+            </article>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-16">
+    <footer class="bg-slate-900 text-slate-400 py-16 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-6">
+                    <div class="flex items-center space-x-2 mb-6">
                         <div class="bg-blue-600 p-2 rounded-lg">
-                            <i data-lucide="layers" class="text-white w-5 h-5"></i>
+                            <i data-lucide="zap" class="text-white w-6 h-6"></i>
                         </div>
-                        <span class="text-xl font-black tracking-tight text-white uppercase">YoYo<span class="text-blue-600">Comunicazione</span></span>
+                        <span class="text-xl font-black tracking-tighter text-white uppercase">YoYo<span class="text-blue-600">Comunicazione</span></span>
                     </div>
-                    <p class="max-w-md">
-                        La tua guida indipendente al mondo del gaming online in Italia. Analizziamo e confrontiamo solo le piattaforme più sicure e vantaggiose del {{year}}.
+                    <p class="max-w-sm mb-6">
+                        Il portale leader in Italia per la comparazione di siti di gioco sicuri e legali. Analizziamo costantemente il mercato per offrirti solo il meglio del gaming online.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-lucide="instagram"></i></a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6">Link Rapidi</h4>
                     <ul class="space-y-4">
-                        <li><a href="/about/" class="hover:text-blue-400 transition">Chi Siamo</a></li>
-                        <li><a href="/contacts/" class="hover:text-blue-400 transition">Contatti</a></li>
-                        <li><a href="/cookie-policy/" class="hover:text-blue-400 transition">Cookie Policy</a></li>
-                        <li><a href="/privacy-policy/" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Migliori Bonus</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Nuovi Casino</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Casino Live</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Metodi di Pagamento</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">Gioco Responsabile</h4>
-                    <p class="text-sm leading-relaxed">
-                        Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica. Gioca con moderazione.
-                    </p>
+                    <h4 class="text-white font-bold mb-6">Legale</h4>
+                    <ul class="space-y-4">
+                        <li><a href="/privacy-policy/" class="hover:text-blue-500 transition">Privacy Policy</a></li>
+                        <li><a href="/cookie-policy/" class="hover:text-blue-500 transition">Cookie Policy</a></li>
+                        <li><a href="/terms/" class="hover:text-blue-500 transition">Termini e Condizioni</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition">Gioco Responsabile</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-sm">
-                &copy; {{year}} yoyocomunicazione.com - Tutti i diritti riservati.
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; {{year}} yoyocomunicazione.com - Tutti i diritti riservati.</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/18%2B_icon.svg" alt="18+" class="h-8 grayscale opacity-50">
+                    <img src="https://upload.wikimedia.org/wikipedia/it/e/e3/Agenzia_delle_Dogane_e_dei_Monopoli.svg" alt="ADM" class="h-8 grayscale opacity-50">
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] p-4">
-        <div class="max-w-4xl mx-auto bg-slate-900 text-white p-6 rounded-2xl shadow-2xl border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-start gap-4">
-                <div class="bg-blue-600/20 p-3 rounded-full hidden sm:block">
-                    <i data-lucide="cookie" class="text-blue-400 w-6 h-6"></i>
-                </div>
-                <div>
-                    <p class="text-sm text-slate-300">
-                        Utilizziamo i cookie per migliorare la tua esperienza di navigazione e analizzare il nostro traffico. Cliccando su "Accetta", acconsenti al nostro utilizzo dei cookie.
-                    </p>
-                </div>
-            </div>
-            <div class="flex gap-3 shrink-0">
-                <button onclick="closeCookie()" class="px-6 py-2 text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-full transition">Accetta</button>
-                <button onclick="closeCookie()" class="px-6 py-2 text-sm font-bold bg-slate-800 hover:bg-slate-700 text-white rounded-full transition">Chiudi</button>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 z-[100] border-t border-slate-800 animate-slide-up">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-300 text-center md:text-left">
+                Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare, accetti la nostra politica sui cookie.
+            </p>
+            <div class="flex space-x-4">
+                <button onclick="closeCookieBanner()" class="text-sm font-semibold hover:underline">Rifiuta</button>
+                <button onclick="closeCookieBanner()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-bold transition">
+                    Accetta tutto
+                </button>
             </div>
         </div>
     </div>
 
     <script>
-        // Initialize Lucide Icons
+        // Lucide Icons Initialization
         lucide.createIcons();
 
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Cookie Banner Functionality
-        function closeCookie() {
+        // Cookie Banner Close
+        function closeCookieBanner() {
             document.getElementById('cookie-banner').style.display = 'none';
         }
     </script>
+
+    {{schema_json}}
 </body>
 </html>
